@@ -7,7 +7,16 @@ public class Main {
         //constructor - a special method / function used to create object of the class
         Line l1 = new Line(m1.getPoint(), m1.getPoint());
         l1.calculateLength();
+        Line l2 = new Line(m1.getPoint(),m1.getPoint());
+        l2.calculateLength();
+
+        if (Double.valueOf(l1.length).equals(Double.valueOf(l2.length))) {
+            System.out.println("Line 1 and Line 2 are equal in length");
+        } else {
+            System.out.println("Line 1 and Line 2 are not equal in length");
+        }
     }
+
     public Point getPoint(){
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter x co-ordinate: ");
