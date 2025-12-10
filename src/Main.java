@@ -10,14 +10,19 @@ public class Main {
         Line l2 = new Line(m1.getPoint(),m1.getPoint());
         l2.calculateLength();
 
-        if (Double.valueOf(l1.length).equals(Double.valueOf(l2.length))) {
-            System.out.println("Line 1 and Line 2 are equal in length");
-        } else {
-            System.out.println("Line 1 and Line 2 are not equal in length");
+        int compareResult = Double.valueOf(l1.length).compareTo(Double.valueOf(l2.length));
+        if(compareResult == 0){
+            System.out.println("Line 1 is equal to Line 2");
+        }
+        else if(compareResult > 0){
+            System.out.println("Line 1 is greater than Line 2");
+        }
+        else{
+            System.out.println("Line 1 is less than Line 2");
         }
     }
 
-    public Point getPoint(){
+    public Point getPoint() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter x co-ordinate: ");
         double x = sc.nextDouble();
