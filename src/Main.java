@@ -4,21 +4,26 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Welcome to Line Comparison Computation.");
         Main m1 = new Main();
-        //constructor - a special method / function used to create object of the class
+        System.out.println("Enter points for Line 1");
         Line l1 = new Line(m1.getPoint(), m1.getPoint());
-        l1.calculateLength();
-        Line l2 = new Line(m1.getPoint(),m1.getPoint());
-        l2.calculateLength();
+        System.out.println("Length of Line 1: " + l1.length);
+        System.out.println("Enter points for Line 2");
+        Line l2 = new Line(m1.getPoint(), m1.getPoint());
+        System.out.println("Length of Line 2: " + l2.length);
 
-        int compareResult = Double.valueOf(l1.length).compareTo(Double.valueOf(l2.length));
-        if(compareResult == 0){
-            System.out.println("Line 1 is equal to Line 2");
+        if (l1.equals(l2)) {
+            System.out.println("Both lines are equal");
+        } else {
+            System.out.println("Both lines are not equal");
         }
-        else if(compareResult > 0){
+
+        int result = l1.compareTo(l2);
+        if (result > 0) {
             System.out.println("Line 1 is greater than Line 2");
-        }
-        else{
+        } else if (result < 0) {
             System.out.println("Line 1 is less than Line 2");
+        } else {
+            System.out.println("Line 1 and Line 2 are same");
         }
     }
 
